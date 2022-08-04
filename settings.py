@@ -1,0 +1,1 @@
+"""Module will hold settings"""
