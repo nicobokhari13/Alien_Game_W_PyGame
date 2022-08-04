@@ -13,14 +13,20 @@ class AlienInvasion:
             #.display is a surface that represents entire game window
         pygame.display.set_caption('Alien Invasion')
 
+        #Set Background Color:
+        self.bg_color = (230, 230, 230) #RGB Value
+            #230, 230, 230 = light gray
+
     def run_game(self):
         """Start loop for game"""
         while True:
             #Watch for Keyboard and Mouse Events 
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+                if event.type == pygame.QUIT: #if the user clicks the window's close button
+                    sys.exit() #exit program
             
+            #Update screen 
+            self.screen.fill(self.bg_color)
             #Make most recently drawn screen visible
             pygame.display.flip()
 
