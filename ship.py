@@ -12,11 +12,13 @@ class Ship:
         self.screen_rect = ai_game.screen.get_rect()
 
         # Load the ship image and get its rect
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load('images/ship.bmp') 
         self.rect = self.image.get_rect() #treat all game elements like rectangles
 
         #Start each new ship at the bottom center of the screen 
         self.rect.midbottom = self.screen_rect.midbottom
+            #the ship's rectangle coordinates are the middle bottom of the screen's middle bottom
+        #rect can access: x, y, top, bottom, left, right edge, and the center
 
     def blitme(self):
         """Draw the ship at current location"""
