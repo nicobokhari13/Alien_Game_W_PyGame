@@ -13,6 +13,12 @@ class AlienInvasion:
         """Initialize the game, create game resources"""
         pygame.init()
         self.settings = Settings()
+        #Run Game in Full Screen
+        # self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+        # self.settings.screen_width = self.screen.get_rect().width
+        # self.settings.screen_height = self.screen.get_rect().height
+
+        #Run Game in a Window
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height)) 
             #Create window with tuple 1200 pixels wide by 800 pixels high
             #.display is a surface that represents entire game window
