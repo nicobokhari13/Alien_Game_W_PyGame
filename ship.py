@@ -19,6 +19,14 @@ class Ship:
             #the ship's rectangle coordinates are the middle bottom of the screen's middle bottom
         #rect can access: x, y, top, bottom, left, right edge, and the center
 
+        #Flags for movement
+        self.moving_right = False
+
+    def update(self):
+        """Update ship's position based on movement flags"""
+        if self.moving_right:
+            self.rect.x += 1
+
     def blitme(self):
         """Draw the ship at current location"""
         self.screen.blit(self.image, self.rect)
