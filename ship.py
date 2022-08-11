@@ -19,16 +19,25 @@ class Ship:
             #the ship's rectangle coordinates are the middle bottom of the screen's middle bottom
         #rect can access: x, y, top, bottom, left, right edge, and the center
 
-        #Flags for movement
+        #Movement
         self.moving_right = False
         self.moving_left = False
 
+        #Settings 
+        self.settings = ai_game.settings
+        self.x = float(self.rect.x)
+
     def update(self):
         """Update ship's position based on movement flags"""
-        if self.moving_right:
-            self.rect.x += 1
-        if self.moving_left: 
-            self.rect.x -= 1
+        #Move right until the right edge of the screen rectangle
+        if self.moving_right and self.rect.right < self.screen_rect.right:
+            self.x += self.settings.ship_speed
+        #Move left until the left edge of the screen rectangle
+        if self.moving_left and self.rect.left > 0:
+            self.x -= self.settings.ship_speed
+        
+        #Update rect object from self.x
+        self.rect.x = self.x
 
     def blitme(self):
         """Draw the ship at current location"""
