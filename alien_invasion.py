@@ -25,6 +25,8 @@ class AlienInvasion:
         while True:
             #Refactoring into _check_events() and _update_screen()
             self._check_events()
+            #Update Ship 
+            self.ship.update()
             #Update screen 
             self._update_events()
 
@@ -37,7 +39,11 @@ class AlienInvasion:
             elif event.type == pygame.KEYDOWN: #if a key is pressed
                 if event.key == pygame.K_RIGHT: #if the key is the right key
                     #move the ship to the right
-                    self.ship.rect.x += 1
+                    self.ship.moving_right = True
+            elif event.type == pygame.KEYUP: #if a key is released
+                if event.key == pygame.K_RIGHT: #if the key is the right key
+                    self.ship.moving_right = False
+
 
 
     def _update_screen(self):
