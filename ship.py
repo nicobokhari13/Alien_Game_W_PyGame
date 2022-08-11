@@ -7,7 +7,6 @@ class Ship:
 
     def __init__(self, ai_game): #ship is created after the game instance is created
         """Initialize the ship and set start coordinates"""
-
         self.screen = ai_game.screen
         self.screen_rect = ai_game.screen.get_rect()
 
@@ -23,4 +22,4 @@ class Ship:
     def blitme(self):
         """Draw the ship at current location"""
         self.screen.blit(self.image, self.rect)
-
+    
