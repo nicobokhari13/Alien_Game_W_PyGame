@@ -1,6 +1,6 @@
 import sys 
 
-import pygame
+import pygame 
 
 from settings import Settings
 
@@ -24,6 +24,8 @@ class AlienInvasion:
             #.display is a surface that represents entire game window
         self.ship = Ship(self) #game is being created, pass it as parameter for Ship constructor
         pygame.display.set_caption('Alien Invasion')
+
+
     def run_game(self):
         """Start loop for game"""
         while True:
